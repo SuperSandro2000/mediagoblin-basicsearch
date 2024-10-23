@@ -13,10 +13,7 @@
 #
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-from mediagoblin import mg_globals
-from mediagoblin.db.base import Session
-from mediagoblin.db.models import (MediaEntry, MediaTag, Collection,
-                                   CollectionItem, User)
+from mediagoblin.db.models import (MediaEntry, MediaTag, User)
 from mediagoblin.decorators import uses_pagination
 from mediagoblin.tools.response import render_to_response
 from mediagoblin.tools.pagination import Pagination
