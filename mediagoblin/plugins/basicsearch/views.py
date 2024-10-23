@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 from mediagoblin.db.models import (MediaEntry, MediaTag, User)
-from mediagoblin.decorators import uses_pagination
+from mediagoblin.decorators import uses_pagination, user_not_banned
 from mediagoblin.tools.response import render_to_response
 from mediagoblin.tools.pagination import Pagination
 
@@ -27,7 +27,7 @@ import logging
 _log = logging.getLogger(__name__)
 
 
-@csrf_exempt
+@user_not_banned
 @uses_pagination
 def search_results_view(request, page):
 
