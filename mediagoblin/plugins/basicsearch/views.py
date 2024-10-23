@@ -57,7 +57,7 @@ def search_results_view(request, page):
               media_entry_statements.append(MediaEntry.description.ilike(term))
               media_tag_statements.append(MediaTag.name.ilike(term))
 
-        matches = MediaEntry.query.filter(
+        matches = MediaEntry.query.outerjoin(MediaTag, MediaEntry.id == MediaTag.media_entry).filter(
             and_(
                 MediaEntry.state == u'processed',
                 or_(
